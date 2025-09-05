@@ -7,7 +7,7 @@
 <p align="center">
   Modern, responsive, static site for a grocery/food brand.
   <br/>
-  <a href="https://alensharhan.github.io/BiteBox-Food-Delivery/">Live Demo</a> •
+  <a href="https://alensharhan.github.io/BiteBox-Food-Delivery/">Live Demo</a> 
 </p>
 
 ---
