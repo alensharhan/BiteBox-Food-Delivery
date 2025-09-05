@@ -1,0 +1,201 @@
+/* ============================= */
+/* ABOUT US – DESKTOP            */
+/* ============================= */
+.about-section {
+  padding: 80px;
+  background-color: var(--surface);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: "image text";
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-image {
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-text {
+  grid-area: text;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 450px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+}
+
+.about-text .highlight {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.about-text .section-title {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.about-description {
+  margin-bottom: 30px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.feature-item i {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #e8f9ef;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  line-height: 1; /* centers FA glyphs perfectly */
+}
+
+.learn-more-btn {
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--primary);
+  color: var(--surface);
+  border-radius: 50px;
+  padding: 12px 28px;
+  transition: all 0.3s ease;
+}
+.learn-more-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* ============================= */
+/* TABLET (<= 900px)             */
+/* ============================= */
+@media (max-width: 900px) {
+  .about-section {
+    padding: 48px 20px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "text";
+    gap: 28px;
+    text-align: center;
+  }
+
+  /* Slightly smaller image for tablets */
+  .about-image img {
+    width: 88%;
+    max-width: 420px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+
+  .about-text .section-title {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .about-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 90%;
+    margin: 0 auto 22px;
+  }
+
+  /* Center the list; align rows to a fixed icon column */
+  .feature-list {
+    width: fit-content;
+    margin: 0 auto 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .feature-item {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    align-items: center;
+    column-gap: 12px;
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  .feature-item i {
+    width: 44px;
+    height: 44px;
+    font-size: 1.05rem;
+  }
+
+  .learn-more-btn {
+    display: inline-block;
+    margin: 18px auto 0;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    border-radius: 30px;
+  }
+}
+
+/* ============================= */
+/* PHONES (<= 767px)             */
+/* ============================= */
+@media (max-width: 767px) {
+  /* Make the image lighter on phones */
+  .about-image img {
+    width: 100%;
+    max-width: clamp(220px, 62vw, 320px);
+    height: auto;
+  }
+}
+
+/* ============================= */
+/* EXTRA SMALL PHONES (<= 400px) */
+/* ============================= */
+@media (max-width: 400px) {
+  .about-text .section-title {
+    font-size: 1.75rem;
+  }
+  .feature-item {
+    font-size: 0.95rem;
+  }
+  .feature-item i {
+    width: 40px;
+    height: 40px;
+  }
+  .learn-more-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,374 @@
+/* =================================== */
+/* HEADER (FINAL CORRECTED VERSION)    */
+/* =================================== */
+
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  gap: 16px;
+  z-index: 999;
+}
+
+/* --- Left Section --- */
+.left-section {
+  flex-shrink: 0;
+}
+.logo {
+  height: 90px;
+  width: auto;
+}
+
+/* --- Middle Section (Nav Links) --- */
+.middle-section {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+.middle-section ul {
+  display: flex;
+  list-style: none;
+  gap: clamp(12px, 2vw, 24px);
+}
+.middle-section a {
+  color: #111;
+  text-decoration: none;
+  padding: 6px 4px;
+}
+.middle-section a:hover {
+  color: var(--primary);
+}
+.middle-section .home-link {
+  background-color: #e8f9ef;
+  color: var(--primary-hover);
+  padding: 8px 16px;
+  border: 1px solid #d9f3e3;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.middle-section .home-link:hover {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  transform: translateY(-2px);
+}
+
+/* --- Right Section --- */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-pic img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hamburger-menu {
+  display: none; /* Hidden on desktop */
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =================================== */
+/* HEADER RESPONSIVE                   */
+/* =================================== */
+
+@media (max-width: 900px) {
+  .header {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 0 20px;
+  }
+
+  /* Hide the desktop elements */
+  .middle-section,
+  .user-info {
+    display: none;
+  }
+
+  /* Show the hamburger icon */
+  .hamburger-menu {
+    display: block;
+  }
+
+  /* Style the mobile dropdown menu */
+  .middle-section.active {
+    display: flex;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--surface);
+    box-shadow: var(--shadow-md);
+    flex-direction: column;
+    padding: 20px;
+    z-index: 998;
+  }
+  .middle-section.active ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+/* HERO SECTION */
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  padding-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  background-image: url("../assets/hero-section/hero-pic.png");
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 56px; /* a touch more spacing */
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.hero-text {
+  max-width: 520px;
+  color: var(--text);
+}
+.hero-text h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero-image {
+  /* This makes it the positioning anchor for our splash */
+  position: relative;
+}
+
+.hero-image img {
+  width: 350px;
+  height: 350px;
+  object-fit: contain; /* keep full proportions */
+  border-radius: 0; /* no forced circle */
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Splash Picture Effect --- */
+.hero-image::after {
+  content: ""; /* This is always required */
+  position: absolute;
+  z-index: 1; /* Place this on a lower "layer" (behind the image) */
+
+  /* Make the splash slightly larger than the food picture */
+  width: 120%;
+  height: 120%;
+
+  /* Center the splash perfectly behind the food picture */
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* THIS IS THE MOST IMPORTANT LINE: Link to YOUR image */
+  background-image: url("../assets/hero-section/orange-splash.png");
+
+  /* Make sure your splash picture fits correctly */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* ============================================= */
+/* MEDIA QUERIES FOR HERO SECTION                */
+/* ============================================= */
+
+/* --- TABLET VIEW (screens smaller than 992px) --- */
+@media (max-width: 991px) {
+  .hero-section {
+    /* Reduce the side padding to give content more room */
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .hero-content {
+    /* Reduce the gap between the text and image */
+    gap: 40px;
+  }
+
+  .hero-text h1 {
+    /* Make the main title slightly smaller */
+    font-size: 2.5rem;
+  }
+
+  .hero-image img {
+    /* Make the image smaller */
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero-image::after {
+    /* Make the splash smaller to match the image */
+    width: 110%;
+    height: 110%;
+  }
+}
+
+/* --- MOBILE VIEW (screens smaller than 768px) --- */
+@media (max-width: 767px) {
+  .hero-section {
+    /* Further reduce padding for narrow phone screens */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-content {
+    /* CRUCIAL: Stack the content vertically */
+    flex-direction: column;
+    /* Center the text now that it's stacked */
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    /* Make the title even smaller for mobile */
+    font-size: 2.2rem;
+  }
+
+  .hero-image {
+    /* IMPORTANT: Hide the image on small mobile screens.
+       This is a common practice to save vertical space and
+       keep the most important content (the text and button) visible. */
+    display: none;
+  }
+}
+
+.shop-button {
+  background-color: var(--primary);
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.shop-button:hover {
+  background-color: var(--primary-hover);
+}
+.shop-button:active {
+  transform: translateY(1px);
+}
+
+/* ARROW STYLING — keep SVG, remove background */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* no background, no border, no shadow */
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+
+  /* comfortable invisible hit area */
+  padding: 8px;
+  width: auto;
+  height: auto;
+
+  color: rgba(17, 17, 17, 0.75); /* arrow color */
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: color 0.2s ease, transform 0.12s ease;
+}
+
+/* size the SVG and make it follow `color` */
+.arrow svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+.arrow svg path {
+  fill: currentColor;
+}
+
+/* hover/active states */
+.arrow:hover {
+  color: var(--primary);
+}
+.left-arrow:hover svg {
+  transform: translateX(-2px);
+}
+.right-arrow:hover svg {
+  transform: translateX(2px);
+}
+.arrow:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+/* positions */
+.left-arrow {
+  left: 30px;
+}
+.right-arrow {
+  right: 30px;
+}
+
+/* optional keyboard focus ring (still no background) */
+.arrow:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.28);
+  border-radius: 6px;
+}
+
+/* --- Animation for content fade-in --- */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  /* fixed typo */
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

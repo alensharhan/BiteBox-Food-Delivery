@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/home-section.css" />
+    <link rel="stylesheet" href="styles/cart.css" />
+    <link rel="stylesheet" href="styles/category-section.css" />
+    <link rel="stylesheet" href="styles/product-section.css" />
+    <link rel="stylesheet" href="styles/about-section.css" />
+    <link rel="stylesheet" href="styles/customer-section.css" />
+    <link rel="stylesheet" href="styles/footer-section.css" />
+    <link rel="icon" type="image/png" href="assets/favicon/fav-pic.png" />
+
+    <title>BiteBox</title>
+  </head>
+  <body>
+    <!-- ADD THIS ENTIRE BLOCK -->
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button class="close-cart-btn" id="close-cart-btn">&times;</button>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <!-- Cart items will be added here by JavaScript -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <strong>Total:</strong>
+          <span id="cart-total">$0.00</span>
+        </div>
+        <button class="shop-button">Proceed to Buy</button>
+      </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <header class="header">
+      <!-- Left Section -->
+      <div class="left-section">
+        <img
+          src="assets/logo/BiteBox-logo.png"
+          alt="BiteBox Logo"
+          class="logo"
+        />
+      </div>
+
+      <!-- Middle Section (Navigation) -->
+      <nav id="nav-links" class="middle-section">
+        <ul>
+          <li>
+            <a href="#home"><span class="home-link">Home</span></a>
+          </li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#customers">Customers</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Section -->
+      <div class="right-section">
+        <!-- User Info (for Desktop) -->
+        <div class="user-info">
+          <span class="user-pic">
+            <img
+              src="assets/current-user/user-pic.jpg"
+              alt="current user picture"
+            />
+          </span>
+          <span>Alen Sharhan</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+
+        <!-- Icons Container -->
+        <div class="header-icons">
+          <div class="cart-icon" id="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cart-count">0</span>
+          </div>
+          <div id="hamburger-menu" class="hamburger-menu">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section id="home" class="hero-section">
+        <div class="hero-content">
+          <div class="hero-text">
+            <p id="slide-subtitle">We ARE BITEBOX</p>
+            <h1 id="slide-title">Choose the best healthy chicken salad</h1>
+            <button class="shop-button">Shop Now &rarr;</button>
+          </div>
+          <div class="hero-image">
+            <img id="slide-image" src="" />
+          </div>
+        </div>
+        <div id="prevBtn" class="arrow left-arrow">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+          </svg>
+        </div>
+        <div id="nextBtn" class="arrow right-arrow">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- CATEGORIES SECTION -->
+      <section id="categories" class="categories-section">
+        <!-- Categories Header -->
+        <div class="categories-header">
+          <h2>
+            Browse Our Hottest <br />
+            <span class="green-text">categories</span>
+          </h2>
+          <button class="shop-button">Shop Now &rarr;</button>
+        </div>
+
+        <!-- Category Cards Grid -->
+        <div class="category-grid">
+          <!-- Card 1: Fruits -->
+          <div class="category-card" id="fruits">
+            <img src="assets/categories/fruits.jpg" alt="Fruits" />
+            <h3>Fruits</h3>
+            <p>22 Items</p>
+          </div>
+          <!-- Card 2: Vegetables -->
+          <div class="category-card" id="vegetables">
+            <img src="assets/categories/vegtables.jpg" alt="Vegetables" />
+            <h3>Vegetables</h3>
+            <p>24 Items</p>
+          </div>
+
+          <!-- Card 3: Drinks -->
+          <div class="category-card" id="drinks">
+            <img src="assets/categories/drinks.jpg" alt="Drinks" />
+            <h3>Drinks</h3>
+            <p>16 Items</p>
+          </div>
+
+          <!-- Card 4: Fresh Nuts -->
+          <div class="category-card" id="fresh-nuts">
+            <img src="assets/categories/fresh-nuts.jpg" alt="Fresh Nuts" />
+            <h3>Fresh Nuts</h3>
+            <p>14 Items</p>
+          </div>
+
+          <!-- Card 5: Spices -->
+          <div class="category-card" id="spices">
+            <img src="assets/categories/spices.jpg" alt="Spices" />
+            <h3>Spices</h3>
+            <p>17 Items</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- POPULAR PRODUCTS SECTION -->
+      <section id="products" class="products-section">
+        <!-- Section Header -->
+        <h2 class="section-title">Our Popular Products</h2>
+
+        <!-- Product Grid Container -->
+        <div class="product-grid">
+          <!-- Card 1: Green Salad -->
+          <div
+            class="product-card"
+            data-id="1"
+            data-name="Green Salad"
+            data-price="12.99"
+            data-image="assets/products/green-salad.jpg"
+            data-discount="20%"
+          >
+            <img src="assets/products/green-salad.jpg" alt="Green Salad" />
+            <h3>Green Salad</h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="price">$12.99</p>
+            <!-- This new container will manage the button state -->
+            <div class="cart-button-container">
+              <!-- The initial icon button -->
+              <button class="add-cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </button>
+              <!-- The quantity selector (hidden by default) -->
+              <div class="quantity-selector">
+                <button class="quantity-btn" data-action="decrease">-</button>
+                <span class="quantity-display">1</span>
+                <button class="quantity-btn" data-action="increase">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Fresh Juice -->
+          <div
+            class="product-card"
+            data-id="2"
+            data-name="Fresh Juice"
+            data-price="8.4"
+            data-image="assets/products/fresh-juice.jpg"
+            data-discount="10%"
+          >
+            <img src="assets/products/fresh-juice.jpg" alt="Fresh Juice" />
+            <h3>Fresh Juice</h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="price">$8.49</p>
+            <!-- This new container will manage the button state -->
+            <div class="cart-button-container">
+              <!-- The initial icon button -->
+              <button class="add-cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </button>
+              <!-- The quantity selector (hidden by default) -->
+              <div class="quantity-selector">
+                <button class="quantity-btn" data-action="decrease">-</button>
+                <span class="quantity-display">1</span>
+                <button class="quantity-btn" data-action="increase">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Mixed Nuts -->
+          <div
+            class="product-card"
+            data-id="3"
+            data-name="Mixed Nuts"
+            data-price="15.00"
+            data-image="assets/products/mixed-nuts.jpg"
+            data-discount="4%"
+          >
+            <img src="assets/products/mixed-nuts.jpg" alt="Mixed Nuts" />
+            <h3>Mixed Nuts</h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <p class="price">$15.00</p>
+            <!-- This new container will manage the button state -->
+            <div class="cart-button-container">
+              <!-- The initial icon button -->
+              <button class="add-cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </button>
+              <!-- The quantity selector (hidden by default) -->
+              <div class="quantity-selector">
+                <button class="quantity-btn" data-action="decrease">-</button>
+                <span class="quantity-display">1</span>
+                <button class="quantity-btn" data-action="increase">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Spicy Peppers -->
+          <div
+            class="product-card"
+            data-id="4"
+            data-name="Spicy Peppers"
+            data-price="5.99"
+            data-image="assets/products/spicy-peppers.jpg"
+            data-discount="11%"
+          >
+            <img src="assets/products/spicy-peppers.jpg" alt="Spicy Peppers" />
+            <h3>Spicy Peppers</h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="price">$5.99</p>
+            <!-- This new container will manage the button state -->
+            <div class="cart-button-container">
+              <!-- The initial icon button -->
+              <button class="add-cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </button>
+              <!-- The quantity selector (hidden by default) -->
+              <div class="quantity-selector">
+                <button class="quantity-btn" data-action="decrease">-</button>
+                <span class="quantity-display">1</span>
+                <button class="quantity-btn" data-action="increase">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Fresh Bread -->
+          <div
+            class="product-card"
+            data-id="5"
+            data-name="Fresh Bread"
+            data-price="6.50"
+            data-image="assets/products/fresh-bread.jpg"
+            data-discount="13%"
+          >
+            <img src="assets/products/fresh-bread.jpg" alt="Fresh Bread" />
+            <h3>Fresh Bread</h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="price">$6.50</p>
+            <!-- This new container will manage the button state -->
+            <div class="cart-button-container">
+              <!-- The initial icon button -->
+              <button class="add-cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </button>
+              <!-- The quantity selector (hidden by default) -->
+              <div class="quantity-selector">
+                <button class="quantity-btn" data-action="decrease">-</button>
+                <span class="quantity-display">1</span>
+                <button class="quantity-btn" data-action="increase">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Avocado Toast -->
+          <div
+            class="product-card"
+            data-id="6"
+            data-name="Avocado Toast"
+            data-price="11.00"
+            data-image="assets/products/avocado-toast.jpg"
+            data-discount="5%"
+          >
+            <img src="assets/products/avocado-toast.jpg" alt="Avocado Toast" />
+            <h3>Avocado Toast</h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="price">$11.00</p>
+            <!-- This new container will manage the button state -->
+            <div class="cart-button-container">
+              <!-- The initial icon button -->
+              <button class="add-cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </button>
+              <!-- The quantity selector (hidden by default) -->
+              <div class="quantity-selector">
+                <button class="quantity-btn" data-action="decrease">-</button>
+                <span class="quantity-display">1</span>
+                <button class="quantity-btn" data-action="increase">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT US SECTION -->
+      <section id="about" class="about-section">
+        <div class="about-content">
+          <!-- Image Column -->
+          <div class="about-image">
+            <img
+              src="assets/about/about-pic.png"
+              alt="Fresh ingredients in a basket"
+            />
+          </div>
+
+          <!-- Text Content Column -->
+          <div class="about-text">
+            <p class="highlight">ABOUT US</p>
+            <h2 class="section-title">Why We Are The Best</h2>
+            <p class="about-description">
+              At BiteBox, our passion is simple: to bring you the freshest,
+              highest-quality ingredients with the convenience you deserve. We
+              believe that great food starts with great farming, and we partner
+              with local growers to ensure every item we deliver is packed with
+              flavor and nutrients.
+            </p>
+
+            <!-- Featured Highlights -->
+            <div class="feature-list">
+              <div class="feature-item">
+                <i class="fas fa-leaf"></i>
+                <span>100% Fresh Ingredients</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-truck-fast"></i>
+                <span>Fast & On-Time Delivery</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-recycle"></i>
+                <span>Sustainable & Eco-Friendly</span>
+              </div>
+            </div>
+
+            <button class="learn-more-btn">Learn More</button>
+          </div>
+          <!-- The text column ends here -->
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS SECTION -->
+      <section id="customers" class="testimonials-section">
+        <h2 class="section-title">What Our Customer Say</h2>
+        <div class="testimonial-grid">
+          <!-- Card 1 -->
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p class="quote">
+              "The quality of the fresh produce is unmatched. My family loves
+              the salads we make with ingredients from BiteBox!"
+            </p>
+            <div class="customer-info">
+              <img src="assets/customers/user-1.jpg" alt="Customer Sarah K." />
+              <div class="customer-details">
+                <h4>Sarah K.</h4>
+                <p>Food Blogger</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p class="quote">
+              "Fast delivery and amazing customer service. The spicy peppers
+              were exactly what I needed for my recipe. Highly recommend!"
+            </p>
+            <div class="customer-info">
+              <img src="assets/customers/user-2.jpg" alt="Customer Mike D." />
+              <div class="customer-details">
+                <h4>Mike D.</h4>
+                <p>Home Chef</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="quote">
+              "A fantastic selection of fresh nuts and drinks. It's my new go-to
+              for healthy snacks and ingredients."
+            </p>
+            <div class="customer-info">
+              <img
+                src="assets/customers/user-3.jpg"
+                alt="Customer Jessica L."
+              />
+              <div class="customer-details">
+                <h4>Jessica L.</h4>
+                <p>Fitness Coach</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER SECTION -->
+      <footer class="footer">
+        <div class="footer-content">
+          <!-- Column 1: BiteBox Info -->
+          <div class="footer-column">
+            <a href="#" class="footer-logo-link">
+              <img
+                src="assets/logo/BiteBox-logo.png"
+                alt="BiteBox Logo"
+                class="footer-logo-img"
+              />
+            </a>
+            <p class="footer-desc">
+              Your one-stop shop for the freshest, healthiest, and most
+              delicious groceries, delivered right to your door.
+            </p>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Categories</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact Us -->
+          <div class="footer-column">
+            <h4>Contact Us</h4>
+            <ul>
+              <li>123 Green St, Foodville, FA 45678</li>
+              <li>(123) 456-7890</li>
+              <li>contact@bitebox.com</li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Follow Us -->
+          <div class="footer-column">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 BiteBox. All Rights Reserved.</p>
+        </div>
+      </footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

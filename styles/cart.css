@@ -1,0 +1,190 @@
+/* =================================== */
+/* SHOPPING CART STYLES                */
+/* =================================== */
+
+/* --- Cart Icon in Header --- */
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-right: 15px; /* Add some space next to the user info */
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--surface);
+}
+
+/* --- Cart Sidebar and Overlay --- */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Start completely off-screen to the right */
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  background-color: var(--surface);
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+  z-index: 1001; /* Make sure it's on top of the overlay */
+  transition: right 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-sidebar.active {
+  right: 0; /* This class will be added by JS to slide the cart in */
+}
+
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.cart-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- Cart Internal Content --- */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-header h3 {
+  font-size: 1.5rem;
+}
+
+.close-cart-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.cart-items {
+  flex-grow: 1; /* This makes the item list take all available space */
+  overflow-y: auto; /* Add a scrollbar if items overflow */
+  padding: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.cart-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.cart-item-details h4 {
+  margin: 0 0 5px 0;
+}
+.cart-item-details .price {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* --- Improved Cart Sidebar Button Styles --- */
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  background-color: #f1f2f6;
+  border-radius: 50px;
+  padding: 4px;
+}
+
+.quantity-btn,
+.remove-btn {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.remove-btn {
+  background-color: #ffdddd;
+  color: #c0392b;
+  margin-left: 10px; /* Space it out */
+  border-color: #ffb8b8;
+}
+
+.quantity-btn:hover {
+  background-color: var(--primary);
+  color: white;
+}
+.remove-btn:hover {
+  background-color: #c0392b;
+  color: white;
+}
+
+/* Center the quantity number between the buttons */
+.cart-item-actions span {
+  width: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.cart-footer {
+  padding: 20px;
+  border-top: 1px solid var(--border);
+  background-color: var(--surface);
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cart-footer .shop-button {
+  width: 100%;
+}
