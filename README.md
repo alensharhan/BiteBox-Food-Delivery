@@ -2,7 +2,7 @@
   <img src="assets/logo/BiteBox-logo.png" alt="BiteBox" height="72" />
 </p>
 
-<h1 align="center">BiteBox — Food Delivery</h1>
+<h1 align="center">BiteBox - Food Delivery</h1>
 
 <p align="center">
   Modern, responsive, static site for a grocery/food brand.
