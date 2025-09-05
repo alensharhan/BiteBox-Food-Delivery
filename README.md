@@ -8,9 +8,6 @@
   Modern, responsive, static site for a grocery/food brand.
   <br/>
   <a href="https://alensharhan.github.io/BiteBox-Food-Delivery/">Live Demo</a> •
-  <a href="https://github.com/alensharhan/BiteBox-Food-Delivery/actions/workflows/pages.yml">
-    <img src="https://github.com/alensharhan/BiteBox-Food-Delivery/actions/workflows/pages.yml/badge.svg" alt="Deploy status" />
-  </a>
 </p>
 
 ---
